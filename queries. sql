@@ -1,0 +1,23 @@
+INSERT INTO Employees(employee_name, department, designation, salary, joining_date)
+VALUES
+('Arun Kumar', 'IT', 'Software Engineer', 50000, '2024-01-15'),
+('Priya', 'HR', 'HR Executive', 40000, '2024-02-10');
+
+INSERT INTO Attendance(employee_id, attendance_date, status)
+VALUES
+(1, '2026-05-01', 'Present'),
+(2, '2026-05-01', 'Present');
+
+INSERT INTO Payroll(employee_id, basic_salary, bonus, deductions, net_salary)
+VALUES
+(1, 50000, 5000, 2000, 53000),
+(2, 40000, 3000, 1000, 42000);
+
+SELECT 
+    Employees.employee_name,
+    Payroll.basic_salary,
+    Payroll.bonus,
+    Payroll.deductions,
+    Payroll.net_salary
+FROM Payroll
+JOIN Employees ON Employees.employee_id = Payroll.employee_id;
